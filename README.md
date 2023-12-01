@@ -5,5 +5,7 @@ Navigate to credentials.h to change SSID and Password.
 
 lib dependencies:
 ArduinoJson
+
 u8g2
+
 Wifi.h
