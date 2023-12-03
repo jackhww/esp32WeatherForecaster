@@ -65,7 +65,16 @@ void weatherOverview(std::vector <weatherData> & weatherEntries){
                   if (strcmp(entry.forecast, "Cloudy") == 0) {
                       drawWeatherSymbol(location.x, location.y, imageCloudy);
                       Serial.printf("%s Cloudy\n", location.name);
-                  } else {
+                  } else if (strcmp(entry.forecast, "Light Showers") == 0){
+                      drawWeatherSymbol(location.x, location.y, imageDrizzle);
+                  } else if (strcmp(entry.forecast, "Thundery Showers") == 0){
+                    drawWeatherSymbol(location.x, location.y, imageRain);
+                  } else if (strcmp(entry.forecast, "Partly Cloudy (Night)") == 0){
+                    drawWeatherSymbol(location.x,location.y, imageCloudy);
+                  } else if (strcmp(entry.forecast, "Light Rain") == 0){
+                    drawWeatherSymbol(location.x, location.y, imageDrizzle);
+                  }
+                    else {
                       drawWeatherSymbol(location.x, location.y, imageRain);
                   }
                   break; //stop searching for location when
